@@ -199,14 +199,17 @@ struct MeshProcess : public dtTileCacheMeshProcess
 				polyAreas[i] = SAMPLE_POLYAREA_GROUND;
 
 			if (polyAreas[i] == SAMPLE_POLYAREA_GROUND ||
-				polyAreas[i] == SAMPLE_POLYAREA_GRASS ||
-				polyAreas[i] == SAMPLE_POLYAREA_ROAD)
+				polyAreas[i] == SAMPLE_POLYAREA_GRASS)
 			{
 				polyFlags[i] = SAMPLE_POLYFLAGS_WALK;
 			}
 			else if (polyAreas[i] == SAMPLE_POLYAREA_WATER)
 			{
 				polyFlags[i] = SAMPLE_POLYFLAGS_SWIM;
+			}
+			else if (polyAreas[i] == SAMPLE_POLYAREA_MAGMA_SLIME)
+			{
+				polyFlags[i] = SAMPLE_POLYFLAGS_MAGMA_SLIME;
 			}
 			else if (polyAreas[i] == SAMPLE_POLYAREA_DOOR)
 			{

@@ -130,14 +130,14 @@ void ConvexVolumeTool::handleMenu()
 
 	imguiLabel("Area Type");
 	imguiIndent();
-	if (imguiCheck("Ground Steep", m_areaType == SAMPLE_POLYAREA_GROUND_STEEP))
-		m_areaType = SAMPLE_POLYAREA_GROUND_STEEP;
 	if (imguiCheck("Ground", m_areaType == SAMPLE_POLYAREA_GROUND))
 		m_areaType = SAMPLE_POLYAREA_GROUND;
+	if (imguiCheck("Ground Steep", m_areaType == SAMPLE_POLYAREA_GROUND_STEEP))
+		m_areaType = SAMPLE_POLYAREA_GROUND_STEEP;
 	if (imguiCheck("Water", m_areaType == SAMPLE_POLYAREA_WATER))
 		m_areaType = SAMPLE_POLYAREA_WATER;
-	if (imguiCheck("Road", m_areaType == SAMPLE_POLYAREA_ROAD))
-		m_areaType = SAMPLE_POLYAREA_ROAD;
+	if (imguiCheck("Magma/Slime", m_areaType == SAMPLE_POLYAREA_MAGMA_SLIME))
+		m_areaType = SAMPLE_POLYAREA_MAGMA_SLIME;
 	if (imguiCheck("Door", m_areaType == SAMPLE_POLYAREA_DOOR))
 		m_areaType = SAMPLE_POLYAREA_DOOR;
 	if (imguiCheck("Grass", m_areaType == SAMPLE_POLYAREA_GRASS))

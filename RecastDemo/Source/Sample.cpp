@@ -44,8 +44,8 @@ unsigned int SampleDebugDraw::areaToCol(unsigned int area)
 	case SAMPLE_POLYAREA_GROUND: return duRGBA(0, 192, 255, 255);
 	// Water : blue
 	case SAMPLE_POLYAREA_WATER: return duRGBA(0, 0, 255, 255);
-	// Road : brown
-	case SAMPLE_POLYAREA_ROAD: return duRGBA(50, 20, 12, 255);
+	// Magma/Slime : red
+	case SAMPLE_POLYAREA_MAGMA_SLIME: return duRGBA(255, 0, 0, 255);
 	// Door : cyan
 	case SAMPLE_POLYAREA_DOOR: return duRGBA(0, 255, 255, 255);
 	// Grass : green

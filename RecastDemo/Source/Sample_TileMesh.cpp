@@ -1145,14 +1145,17 @@ unsigned char* Sample_TileMesh::buildTileMesh(const int tx, const int ty, const 
 				m_pmesh->flags[i] = SAMPLE_POLYFLAGS_WALK_STEEP;
 			}
 			else if (m_pmesh->areas[i] == SAMPLE_POLYAREA_GROUND ||
-				m_pmesh->areas[i] == SAMPLE_POLYAREA_GRASS ||
-				m_pmesh->areas[i] == SAMPLE_POLYAREA_ROAD)
+				m_pmesh->areas[i] == SAMPLE_POLYAREA_GRASS)
 			{
 				m_pmesh->flags[i] = SAMPLE_POLYFLAGS_WALK;
 			}
 			else if (m_pmesh->areas[i] == SAMPLE_POLYAREA_WATER)
 			{
 				m_pmesh->flags[i] = SAMPLE_POLYFLAGS_SWIM;
+			}
+			else if (m_pmesh->areas[i] == SAMPLE_POLYAREA_MAGMA_SLIME)
+			{
+				m_pmesh->flags[i] = SAMPLE_POLYFLAGS_MAGMA_SLIME;
 			}
 			else if (m_pmesh->areas[i] == SAMPLE_POLYAREA_DOOR)
 			{

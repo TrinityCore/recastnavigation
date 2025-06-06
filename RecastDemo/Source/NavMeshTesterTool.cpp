@@ -415,29 +415,24 @@ void NavMeshTesterTool::handleMenu()
 	imguiLabel("Include Flags");
 
 	imguiIndent();
-	if (imguiCheck("Walk Steep", (m_filter.getIncludeFlags() & SAMPLE_POLYFLAGS_WALK_STEEP) != 0))
-	{
-		m_filter.setIncludeFlags(m_filter.getIncludeFlags() ^ SAMPLE_POLYFLAGS_WALK_STEEP);
-		recalc();
-	}
-	if (imguiCheck("Walk", (m_filter.getIncludeFlags() & SAMPLE_POLYFLAGS_WALK) != 0))
+	if (imguiCheck("Ground", (m_filter.getIncludeFlags() & SAMPLE_POLYFLAGS_WALK) != 0))
 	{
 		m_filter.setIncludeFlags(m_filter.getIncludeFlags() ^ SAMPLE_POLYFLAGS_WALK);
 		recalc();
 	}
-	if (imguiCheck("Swim", (m_filter.getIncludeFlags() & SAMPLE_POLYFLAGS_SWIM) != 0))
+	if (imguiCheck("Ground Steep", (m_filter.getIncludeFlags() & SAMPLE_POLYFLAGS_WALK_STEEP) != 0))
+	{
+		m_filter.setIncludeFlags(m_filter.getIncludeFlags() ^ SAMPLE_POLYFLAGS_WALK_STEEP);
+		recalc();
+	}
+	if (imguiCheck("Water", (m_filter.getIncludeFlags() & SAMPLE_POLYFLAGS_SWIM) != 0))
 	{
 		m_filter.setIncludeFlags(m_filter.getIncludeFlags() ^ SAMPLE_POLYFLAGS_SWIM);
 		recalc();
 	}
-	if (imguiCheck("Door", (m_filter.getIncludeFlags() & SAMPLE_POLYFLAGS_DOOR) != 0))
+	if (imguiCheck("Magma/Slime", (m_filter.getIncludeFlags() & SAMPLE_POLYFLAGS_MAGMA_SLIME) != 0))
 	{
-		m_filter.setIncludeFlags(m_filter.getIncludeFlags() ^ SAMPLE_POLYFLAGS_DOOR);
-		recalc();
-	}
-	if (imguiCheck("Jump", (m_filter.getIncludeFlags() & SAMPLE_POLYFLAGS_JUMP) != 0))
-	{
-		m_filter.setIncludeFlags(m_filter.getIncludeFlags() ^ SAMPLE_POLYFLAGS_JUMP);
+		m_filter.setIncludeFlags(m_filter.getIncludeFlags() ^ SAMPLE_POLYFLAGS_MAGMA_SLIME);
 		recalc();
 	}
 	imguiUnindent();
@@ -446,29 +441,24 @@ void NavMeshTesterTool::handleMenu()
 	imguiLabel("Exclude Flags");
 	
 	imguiIndent();
-	if (imguiCheck("Walk Steep", (m_filter.getExcludeFlags() & SAMPLE_POLYFLAGS_WALK_STEEP) != 0))
-	{
-		m_filter.setExcludeFlags(m_filter.getExcludeFlags() ^ SAMPLE_POLYFLAGS_WALK_STEEP);
-		recalc();
-	}
-	if (imguiCheck("Walk", (m_filter.getExcludeFlags() & SAMPLE_POLYFLAGS_WALK) != 0))
+	if (imguiCheck("Ground", (m_filter.getExcludeFlags() & SAMPLE_POLYFLAGS_WALK) != 0))
 	{
 		m_filter.setExcludeFlags(m_filter.getExcludeFlags() ^ SAMPLE_POLYFLAGS_WALK);
 		recalc();
 	}
-	if (imguiCheck("Swim", (m_filter.getExcludeFlags() & SAMPLE_POLYFLAGS_SWIM) != 0))
+	if (imguiCheck("Ground Steep", (m_filter.getExcludeFlags() & SAMPLE_POLYFLAGS_WALK_STEEP) != 0))
+	{
+		m_filter.setExcludeFlags(m_filter.getExcludeFlags() ^ SAMPLE_POLYFLAGS_WALK_STEEP);
+		recalc();
+	}
+	if (imguiCheck("Water", (m_filter.getExcludeFlags() & SAMPLE_POLYFLAGS_SWIM) != 0))
 	{
 		m_filter.setExcludeFlags(m_filter.getExcludeFlags() ^ SAMPLE_POLYFLAGS_SWIM);
 		recalc();
 	}
-	if (imguiCheck("Door", (m_filter.getExcludeFlags() & SAMPLE_POLYFLAGS_DOOR) != 0))
+	if (imguiCheck("Magma/Slime", (m_filter.getExcludeFlags() & SAMPLE_POLYFLAGS_MAGMA_SLIME) != 0))
 	{
-		m_filter.setExcludeFlags(m_filter.getExcludeFlags() ^ SAMPLE_POLYFLAGS_DOOR);
-		recalc();
-	}
-	if (imguiCheck("Jump", (m_filter.getExcludeFlags() & SAMPLE_POLYFLAGS_JUMP) != 0))
-	{
-		m_filter.setExcludeFlags(m_filter.getExcludeFlags() ^ SAMPLE_POLYFLAGS_JUMP);
+		m_filter.setExcludeFlags(m_filter.getExcludeFlags() ^ SAMPLE_POLYFLAGS_MAGMA_SLIME);
 		recalc();
 	}
 	imguiUnindent();
