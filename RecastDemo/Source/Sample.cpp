@@ -176,6 +176,9 @@ void Sample::resetCommonSettings()
 		enableTCSettings();
 	else
 		disableTCSettings();
+
+	if (m_tool)
+		m_tool->init(this);
 }
 
 void Sample::disableTCSettings()

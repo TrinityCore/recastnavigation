@@ -257,13 +257,26 @@ void NavMeshTesterTool::init(Sample* sample)
 	if (m_navQuery)
 	{
 		// Change costs.
-		m_filter.setAreaCost(SAMPLE_POLYAREA_GROUND_STEEP, 1.0f);
-		m_filter.setAreaCost(SAMPLE_POLYAREA_GROUND, 1.0f);
-		m_filter.setAreaCost(SAMPLE_POLYAREA_WATER, 10.0f);
-		m_filter.setAreaCost(SAMPLE_POLYAREA_ROAD, 1.0f);
-		m_filter.setAreaCost(SAMPLE_POLYAREA_DOOR, 1.0f);
-		m_filter.setAreaCost(SAMPLE_POLYAREA_GRASS, 2.0f);
-		m_filter.setAreaCost(SAMPLE_POLYAREA_JUMP, 1.5f);
+		if (m_sample->getTrinityCoreValues())
+		{
+			m_filter.setAreaCost(SAMPLE_POLYAREA_GROUND_STEEP, 1.0f);
+			m_filter.setAreaCost(SAMPLE_POLYAREA_GROUND, 1.0f);
+			m_filter.setAreaCost(SAMPLE_POLYAREA_WATER, 1.0f);
+			m_filter.setAreaCost(SAMPLE_POLYAREA_MAGMA_SLIME, 1.0f);
+			m_filter.setAreaCost(SAMPLE_POLYAREA_DOOR, 1.0f);
+			m_filter.setAreaCost(SAMPLE_POLYAREA_GRASS, 1.0f);
+			m_filter.setAreaCost(SAMPLE_POLYAREA_JUMP, 1.0f);
+		}
+		else
+		{
+			m_filter.setAreaCost(SAMPLE_POLYAREA_GROUND_STEEP, 1.0f);
+			m_filter.setAreaCost(SAMPLE_POLYAREA_GROUND, 1.0f);
+			m_filter.setAreaCost(SAMPLE_POLYAREA_WATER, 10.0f);
+			m_filter.setAreaCost(SAMPLE_POLYAREA_MAGMA_SLIME, 1.0f);
+			m_filter.setAreaCost(SAMPLE_POLYAREA_DOOR, 1.0f);
+			m_filter.setAreaCost(SAMPLE_POLYAREA_GRASS, 2.0f);
+			m_filter.setAreaCost(SAMPLE_POLYAREA_JUMP, 1.5f);
+		}
 	}
 	
 	m_neighbourhoodRadius = sample->getAgentRadius() * 20.0f;
